@@ -23,10 +23,10 @@ class CreateRentalsTable extends Migration
             $table->timestamps();
             $table->foreign('equipment_id')
             ->references('id')
-            ->on('equipment');
+            ->on('equipment')->onDelete('cascade');
             $table->foreign('user_id')
             ->references('id')
-            ->on('users');
+            ->on('users')->onDelete('cascade');
             
         });
     }
